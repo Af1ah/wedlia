@@ -1,0 +1,326 @@
+/* ============================================================
+   Gallery View Page Styles - Mobile First
+   ============================================================ */
+
+.galleryView {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.backBtn {
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.backBtn:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.headerInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.galleryName {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gallerySubName {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.photoCount {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* Description */
+.description {
+    padding: var(--space-4);
+    text-align: center;
+    color: var(--text-secondary);
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-light);
+    margin: 0;
+}
+
+/* Photos Grid - Mobile First */
+.photosGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-1);
+    padding: var(--space-1);
+}
+
+.photoCard {
+    aspect-ratio: 1;
+    background-color: var(--bg-secondary);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    transition: opacity 0.2s;
+}
+
+.photoCard:hover {
+    opacity: 0.9;
+}
+
+.photoCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightboxOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.lightboxContent {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    z-index: 1;
+}
+
+.lightboxContent img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.closeBtn {
+    position: fixed;
+    top: var(--space-4);
+    right: var(--space-4);
+    padding: var(--space-2);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: var(--radius-full);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.closeBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.navBtn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: var(--space-3);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: var(--radius-full);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.navBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.prevBtn {
+    left: var(--space-4);
+}
+
+.nextBtn {
+    right: var(--space-4);
+}
+
+.downloadBtn {
+    position: fixed;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-weight: var(--font-medium);
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.downloadBtn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.photoCounter {
+    position: fixed;
+    bottom: var(--space-4);
+    right: var(--space-4);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-sm);
+    z-index: 10;
+}
+
+/* Password Screen */
+.passwordScreen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-primary);
+    padding: var(--space-4);
+}
+
+.passwordCard {
+    background-color: var(--bg-card);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid var(--border-light);
+}
+
+.lockIcon {
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+}
+
+.passwordCard h1 {
+    font-size: var(--text-xl);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-2);
+}
+
+.passwordCard>p {
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-6);
+}
+
+.passwordForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.passwordInput {
+    padding: var(--space-3);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    text-align: center;
+}
+
+.passwordInput:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.passwordError {
+    color: var(--color-error);
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
+.backLink {
+    display: inline-block;
+    margin-top: var(--space-4);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.backLink:hover {
+    color: var(--color-primary);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: var(--space-6) var(--space-4);
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-light);
+}
+
+.footer p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+    .photosGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-2);
+        padding: var(--space-2);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .header {
+        padding: var(--space-4) var(--space-8);
+    }
+
+    .galleryName {
+        font-size: var(--text-xl);
+    }
+
+    .photosGrid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-3);
+        padding: var(--space-6);
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+    .photosGrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
